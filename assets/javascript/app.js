@@ -8,84 +8,84 @@ var trivia = {
     unanswered: 0,
 
     questions: [{
-                question: "question1",
-                answers: [{answer: "answer1", value: true}, 
-                          {answer: "answer2", value: false}, 
-                          {answer: "answer3", value: false}, 
-                          {answer: "answer4", value: false}]
+                question: "What was the first capital of ancient Egypt?",
+                answers: [{answer: "Memphis", value: true}, 
+                          {answer: "Thebes", value: false}, 
+                          {answer: "Alexandria", value: false}, 
+                          {answer: "Cairo", value: false}]
                 },
                 {
-                question: "question2",
-                answers: [{answer: "answer1", value: false}, 
-                          {answer: "answer2", value: true}, 
-                          {answer: "answer3", value: false}, 
-                          {answer: "answer4", value: false}]
+                question: "What Roman Emperor was once captured by pirates and held for a 12,000 gold-piece ransom?",
+                answers: [{answer: "Caesar Augustus", value: false}, 
+                          {answer: "Julius Caesar", value: true}, 
+                          {answer: "Nero", value: false}, 
+                          {answer: "Caligula", value: false}]
                 },
                 {
-                question: "question3",
-                answers: [{answer: "answer1", value: false}, 
-                          {answer: "answer2", value: false}, 
-                          {answer: "answer3", value: true}, 
-                          {answer: "answer4", value: false}]
+                question: "On what island did ancient Greek civilization originate?",
+                answers: [{answer: "Samos", value: false}, 
+                          {answer: "Olympia", value: false}, 
+                          {answer: "Crete", value: true}, 
+                          {answer: "Rhodes", value: false}]
                 },
                 {
-                question: "question4",
-                answers: [{answer: "answer1", value: false}, 
-                          {answer: "answer2", value: false}, 
-                          {answer: "answer3", value: false}, 
-                          {answer: "answer4", value: true}]
+                question: "Who is considered the founder of the Xia Dynasty in ancient China?",
+                answers: [{answer: "Tang", value: false}, 
+                          {answer: "Qi", value: false}, 
+                          {answer: "Shun", value: false}, 
+                          {answer: "Yu", value: true}]
                 },
                 {
-                question: "question5",
-                answers: [{answer: "answer1", value: false}, 
-                          {answer: "answer2", value: true}, 
-                          {answer: "answer3", value: false}, 
-                          {answer: "answer4", value: false}]
+                question: "How many of the Seven Wonders of the Ancient World still exist?",
+                answers: [{answer: "0", value: false}, 
+                          {answer: "1", value: true}, 
+                          {answer: "2", value: false}, 
+                          {answer: "3", value: false}]
                 },
                 {
-                question: "question6",
-                answers: [{answer: "answer1", value: true}, 
-                          {answer: "answer2", value: false}, 
-                          {answer: "answer3", value: false}, 
-                          {answer: "answer4", value: false}]
+                question: "When did the first documented Olympic Games take place?",
+                answers: [{answer: "776 B.C.", value: true}, 
+                          {answer: "432 B.C.", value: false}, 
+                          {answer: "112 B.C.", value: false}, 
+                          {answer: "6 A.D.", value: false}]
                 },
                 {
-                question: "question7",
-                answers: [{answer: "answer1", value: false}, 
-                          {answer: "answer2", value: false}, 
-                          {answer: "answer3", value: false}, 
-                          {answer: "answer4", value: true}]
+                question: "What is the name for the Warring States period in Japan?",
+                answers: [{answer: "The Edo Period", value: false}, 
+                          {answer: "The Muromachi Period", value: false}, 
+                          {answer: "The Kamakura Period", value: false}, 
+                          {answer: "The Sengoku Period", value: true}]
                 },
                 {
-                question: "question8",
-                answers: [{answer: "answer1", value: false}, 
-                          {answer: "answer2", value: false}, 
-                          {answer: "answer3", value: false}, 
-                          {answer: "answer4", value: true}]
+                question: "What is the name of the person that the Iroquois refer to as 'The Great Peacemaker'?",
+                answers: [{answer: "Onondaga", value: false}, 
+                          {answer: "Jigonhsasee", value: false}, 
+                          {answer: "Hiawatha", value: false}, 
+                          {answer: "Deganawida", value: true}]
                 },
                 {
-                question: "question9",
-                answers: [{answer: "answer1", value: false}, 
-                          {answer: "answer2", value: false}, 
-                          {answer: "answer3", value: true}, 
-                          {answer: "answer4", value: false}]
+                question: "In what year did Genghis Khan found Mongolia?",
+                answers: [{answer: "1129 A.D.", value: false}, 
+                          {answer: "1183 A.D.", value: false}, 
+                          {answer: "1206 A.D.", value: true}, 
+                          {answer: "1241 A.D.", value: false}]
                 },
                 {
-                question: "question10",
-                answers: [{answer: "answer1", value: false}, 
-                          {answer: "answer2", value: true}, 
-                          {answer: "answer3", value: false}, 
-                          {answer: "answer4", value: false}]
+                question: "What was the capital of the Assyrian empire at its founding in 745 B.C.?",
+                answers: [{answer: "Nimrud", value: false}, 
+                          {answer: "Ashur", value: true}, 
+                          {answer: "Babylon", value: false}, 
+                          {answer: "Khattusha", value: false}]
                 }],
 
     displayQuestion: function() {
-        $(".question").html($("<h2>").text(this.questions[this.phase].question));
+        $(".question").html($("<h3>").text(this.questions[this.phase].question));
     },
 
     displayAnswers: function() {
         $(".answers").empty();
         for (var i = 0; i < 4; i++) {
-            var thisAnswer = $("<h3>").text(this.questions[this.phase].answers[i].answer);
+            var thisAnswer = $("<h2>").text(this.questions[this.phase].answers[i].answer);
             var stringID = "answer" + i;
             $(thisAnswer).attr("id", stringID);
             $(".answers").append(thisAnswer);
@@ -95,7 +95,7 @@ var trivia = {
     displayCorrectAnswer: function() {
         for (var i = 0; i < 4; i++) {
             if (this.questions[this.phase].answers[i].value === true) {
-                $(".answers").append($("<h3>").text(this.questions[this.phase].answers[i].answer));
+                $(".answers").append($("<h2>").text(this.questions[this.phase].answers[i].answer));
             }
         };
     },
@@ -103,12 +103,12 @@ var trivia = {
     pickAnswer: function(x) {
         this.stopTimer();
         if (this.questions[trivia.phase].answers[x].value === true) {
-            $(".answers").html("<h3>You are correct! The answer is: </h3>");
-            $(".answers").append($("<h3>").text(trivia.questions[trivia.phase].answers[x].answer));
+            $(".answers").html("<h2>You are correct! The answer is: </h2>");
+            $(".answers").append($("<h2>").text(trivia.questions[trivia.phase].answers[x].answer));
             this.correct++;
         }
         else if (this.questions[trivia.phase].answers[x].value === false) {
-            $(".answers").html("<h3>You are incorrect! The answer is: </h3>");
+            $(".answers").html("<h2>You are incorrect! The answer is: </h2>");
             this.displayCorrectAnswer();
             this.incorrect++;
         }
@@ -122,27 +122,27 @@ var trivia = {
         var restart = $("<button>").text("Play Again");
         restart.attr("class", "start");
         $(".timer").append(restart);
-        $(".question").append($("<h2>").text("Results"));
-        $(".answers").append($("<h3>").text("Correct: " + this.correct));
-        $(".answers").append($("<h3>").text("Incorrect: " + this.incorrect));
-        $(".answers").append($("<h3>").text("Unanswered: " + this.unanswered));
+        $(".question").append($("<h3>").text("Results"));
+        $(".answers").append($("<h2>").text("Correct: " + this.correct));
+        $(".answers").append($("<h2>").text("Incorrect: " + this.incorrect));
+        $(".answers").append($("<h2>").text("Unanswered: " + this.unanswered));
     },
 
     mainTimer: function() {
         trivia.time = 30;
         trivia.intervalId = setInterval(trivia.mainDecrement, 1000);
-        $(".timer").html("Time Remaining: " + trivia.time);
+        $(".timer").html("<h3>Time Remaining: " + trivia.time + "</h3>");
         trivia.displayQuestion();
         trivia.displayAnswers();
     },
 
     mainDecrement: function() {
         trivia.time--;
-        $(".timer").html("Time Remaining: " + trivia.time);
+        $(".timer").html("<h3>Time Remaining: " + trivia.time + "</h3>");
 
         if (trivia.time === 0) {
             trivia.stopTimer();
-            $(".answers").html("<h3>You did not guess in time! The answer is: </h3>");
+            $(".answers").html("<h2>You did not guess in time! The answer is: </h2>");
             trivia.displayCorrectAnswer();
             trivia.unanswered++;
             trivia.transTimer();

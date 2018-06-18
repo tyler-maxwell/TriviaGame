@@ -1,0 +1,33 @@
+body {
+    background: url(../images/map.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    margin-top: 50px;
+    background-color: beige;
+    border-color: burlywood;
+    border-width: 5px;
+    border-style: solid;
+    height: 600px;
+}
+
+.header {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.question {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+#answer0:hover, #answer1:hover, #answer2:hover, #answer3:hover {
+    color: red;
+}
